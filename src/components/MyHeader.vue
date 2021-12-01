@@ -1,12 +1,19 @@
 <template>
   <header>
     <h1>BoolFlix</h1>
+
+    <MySearch/>
   </header>
 </template>
 
 <script>
+import MySearch from '@/components/MySearch.vue';
+
 export default {
   name: 'MyHeader',
+  components: {
+    MySearch
+  }
 
 }
 </script>
