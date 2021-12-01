@@ -1,6 +1,13 @@
 <template>
   <main>
-
+      <!-- Titolo -->
+    <h3>{{  }}</h3>
+      <!-- Titolo Originale -->
+    <h4>{{  }}</h4>
+      <!-- Lingua -->
+    <p>{{  }}</p>
+      <!-- Voto -->
+    <p>{{  }}</p>
   </main>
 </template>
 

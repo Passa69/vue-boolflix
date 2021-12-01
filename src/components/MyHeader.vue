@@ -2,17 +2,32 @@
   <header>
     <h1>BoolFlix</h1>
 
-    <MySearch/>
+    <section>
+      <input type="text" v-model.trim="inputSearch" placeholder="Cerca un Film">
+
+      <button @click.prevent="startSearching">Search</button>
+    </section>
   </header>
 </template>
 
 <script>
-import MySearch from '@/components/MySearch.vue';
-
 export default {
   name: 'MyHeader',
-  components: {
-    MySearch
+
+  data() {
+      return {
+          inputSearch: "",
+          userSearch: ""
+      }
+  },
+  created() {
+      this.startSearching();
+  },
+  methods: {
+      startSearching() {
+          this.userSearch = this.inputSearch;
+          console.log(this.userSearch);
+      }
   }
 
 }
@@ -28,6 +43,23 @@ header {
     color: red;
     float: left;
     margin: 25px;
+  }
+
+  section {
+    margin: 35px;
+    float: right;
+
+    input {
+        margin-right: 10px;
+        width: 200px;
+    }
+
+    button {
+        padding: 5px 15px;
+        background-color: rgb(255, 91, 91);
+        border-radius: 15px;
+        border: rgb(255, 91, 91);
+    }
   }
 }
 </style>
