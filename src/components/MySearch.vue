@@ -1,14 +1,30 @@
 <template>
   <section>
-      <input type="text">
+      <input type="text" v-model="inputSearch" placeholder="Cerca un Film">
 
-      <button>Search</button>
+      <button @click.prevent="startSearching">Search</button>
   </section>
 </template>
 
 <script>
 export default {
   name: 'MySearch',
+
+  data() {
+      return {
+          inputSearch: "",
+          userSearch: ""
+      }
+  },
+  created() {
+      this.startSearching();
+  },
+  methods: {
+      startSearching() {
+          this.userSearch = this.inputSearch;
+          console.log(this.userSearch);
+      }
+  }
 
 }
 </script>
