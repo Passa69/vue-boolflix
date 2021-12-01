@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <MyHeader/>
+    <MyHeader @getInput="setInput" />
 
-    <MyMain/>
+    <MyMain :films="films" />
   </div>
 </template>
 
@@ -19,17 +19,24 @@ export default {
   },
   data() {
     return {
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=ritorno+al+futuro",
-      films: []
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=",
+      films: [],
+      search: ""
     }
   },
   methods: {
     getFilms() {
       axios
-      .get(this.apiUrl)
+      .get(this.apiUrl + this.search)
       .then((film) => {
-        this.films = film.data.response;
+        this.films = film.data.results;
+        console.log(this.films);
       })
+    },
+    setInput(input) {
+      this.search = input;
+      console.log(input);
+      this.getFilms();
     }
   }
 }

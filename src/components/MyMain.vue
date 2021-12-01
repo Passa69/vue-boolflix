@@ -1,12 +1,15 @@
 <template>
   <main>
-      <!-- Titolo -->
+    <!-- Titolo -->
     <h3>{{  }}</h3>
-      <!-- Titolo Originale -->
+
+    <!-- Titolo Originale -->
     <h4>{{  }}</h4>
-      <!-- Lingua -->
+
+    <!-- Lingua -->
     <p>{{  }}</p>
-      <!-- Voto -->
+
+    <!-- Voto -->
     <p>{{  }}</p>
   </main>
 </template>
@@ -14,6 +17,9 @@
 <script>
 export default {
   name: 'MyMain',
+  props: {
+      films: Array
+  }
 
 }
 </script>

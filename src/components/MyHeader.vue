@@ -5,7 +5,7 @@
     <section>
       <input type="text" v-model.trim="inputSearch" placeholder="Cerca un Film">
 
-      <button @click.prevent="startSearching">Search</button>
+      <button @click="$emit('getInput', inputSearch)">Search</button>
     </section>
   </header>
 </template>
@@ -16,20 +16,9 @@ export default {
 
   data() {
       return {
-          inputSearch: "",
-          userSearch: ""
-      }
-  },
-  created() {
-      this.startSearching();
-  },
-  methods: {
-      startSearching() {
-          this.userSearch = this.inputSearch;
-          console.log(this.userSearch);
+          inputSearch: ""
       }
   }
-
 }
 </script>
 
