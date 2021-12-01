@@ -2,10 +2,10 @@
   <main>
     <div v-for="(movie, i) in films" :key="i">
         <!-- Titolo -->
-        <h3>{{ movie.title }}</h3>
+        <h4>{{ movie.title }}</h4>
 
         <!-- Titolo Originale -->
-        <h4>{{ movie.original_title }}</h4>
+        <h5>{{ movie.original_title }}</h5>
 
         <!-- Lingua -->
         <p>{{ movie.original_language }}</p>
@@ -29,8 +29,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 main {
-    background-color: #434343;
-    // debug
-    height: 100vh;
+    height: 100%;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div{
+    // height: 400px;
+    // width: 300px;
+    background-color: #b1dbec;
+    margin: 50px;
+    padding: 200px 50px;
 }
 </style>

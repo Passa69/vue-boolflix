@@ -41,6 +41,8 @@ header {
     input {
         margin-right: 10px;
         width: 200px;
+        border-radius: 15px;
+        padding: 2px 5px;
     }
 
     button {

@@ -2,7 +2,9 @@
   <div id="app">
     <MyHeader @getInput="setInput" />
 
-    <MyMain :films="films" />
+    <main>
+      <MyMain :films="films" />
+    </main>
   </div>
 </template>
 
@@ -54,5 +56,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+main {
+  background-color: #434343;
 }
 </style>
