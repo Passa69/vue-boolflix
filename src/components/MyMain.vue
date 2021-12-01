@@ -2,16 +2,16 @@
   <main>
     <div v-for="(movie, i) in films" :key="i">
         <!-- Titolo -->
-        <h4>{{ movie.title }}</h4>
+        <h4 class="film_element">{{ movie.title }}</h4>
 
         <!-- Titolo Originale -->
-        <h5>{{ movie.original_title }}</h5>
+        <h5 class="film_element">{{ movie.original_title }}</h5>
 
         <!-- Lingua -->
-        <p>{{ movie.original_language }}</p>
+        <p class="film_element">{{ movie.original_language }}</p>
 
         <!-- Voto -->
-        <p>{{ movie.vote_average }}</p>
+        <p class="film_element">{{ movie.vote_average }}</p>
     </div>
   </main>
 </template>
@@ -42,5 +42,9 @@ div{
     background-color: #b1dbec;
     margin: 50px;
     padding: 200px 50px;
+}
+
+.film_element {
+    margin-bottom: 10px;
 }
 </style>
