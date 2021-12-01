@@ -1,16 +1,18 @@
 <template>
   <main>
-    <!-- Titolo -->
-    <h3>{{  }}</h3>
+    <div v-for="(movie, i) in films" :key="i">
+        <!-- Titolo -->
+        <h3>{{ movie.title }}</h3>
 
-    <!-- Titolo Originale -->
-    <h4>{{  }}</h4>
+        <!-- Titolo Originale -->
+        <h4>{{ movie.original_title }}</h4>
 
-    <!-- Lingua -->
-    <p>{{  }}</p>
+        <!-- Lingua -->
+        <p>{{ movie.original_language }}</p>
 
-    <!-- Voto -->
-    <p>{{  }}</p>
+        <!-- Voto -->
+        <p>{{ movie.vote_average }}</p>
+    </div>
   </main>
 </template>
 
