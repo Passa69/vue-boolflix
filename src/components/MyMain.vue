@@ -2,7 +2,7 @@
   <main>
     <div v-for="(movie, i) in films" :key="i">
         <!-- immagine -->
-        <img :src="'http://image.tmdb.org/t/p/w500/' + 'movie.poster_path'" alt="">
+        <img :src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="">
 
         <!-- Titolo -->
         <h4 class="film_element">{{ movie.title }}</h4>
@@ -48,7 +48,6 @@ div{
     // width: 300px;
     background-color: #b1dbec;
     margin: 50px;
-    padding: 200px 50px;
 }
 
 .film_element {
