@@ -30,9 +30,17 @@ export default {
   methods: {
     getFilms() {
       axios
-      .get(this.apiUrlfilm + this.apiUrlseries + this.search)
+      .get(this.apiUrlfilm + this.search)
       .then((film) => {
         this.filmsseries = film.data.results;
+        console.log(this.filmsseries);
+      })
+    },
+    getSeries() {
+      axios
+      .get(this.apiUrlseries + this.search)
+      .then((serie) => {
+        this.filmsseries = serie.data.results;
         console.log(this.filmsseries);
       })
     },
@@ -40,6 +48,7 @@ export default {
       this.search = input;
       console.log(input);
       this.getFilms();
+      this.getSeries();
     }
   }
 }
