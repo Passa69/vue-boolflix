@@ -3,11 +3,11 @@
     <div v-for="(movie, i) in films" :key="i">
         <!-- Titolo -->
         <h4 class="film_element">{{ movie.title }}</h4>
-        <h4 class="film_element">{{ movie.name }}</h4>
+        <h4 v-if="movie.name" class="film_element">{{ movie.name }}</h4>
 
         <!-- Titolo Originale -->
         <h5 class="film_element">{{ movie.original_title }}</h5>
-        <h5 class="film_element">{{ movie.original_name }}</h5>
+        <h5 v-if="movie.original_name" class="film_element">{{ movie.original_name }}</h5>
 
         <!-- Lingua -->
         <p class="film_element" v-if="movie.original_language === 'it'">&#127470;&#127481;</p>

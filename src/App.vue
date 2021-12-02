@@ -32,7 +32,7 @@ export default {
       axios
       .get(this.apiUrlfilm + this.search)
       .then((film) => {
-        this.filmsseries = film.data.results;
+        this.filmsseries.push(...film.data.results);
         console.log(this.filmsseries);
       })
     },
@@ -40,7 +40,7 @@ export default {
       axios
       .get(this.apiUrlseries + this.search)
       .then((serie) => {
-        this.filmsseries = serie.data.results;
+        this.filmsseries.push(...serie.data.results);
         console.log(this.filmsseries);
       })
     },
