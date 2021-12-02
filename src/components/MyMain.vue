@@ -8,7 +8,9 @@
         <h5 class="film_element">{{ movie.original_title }}</h5>
 
         <!-- Lingua -->
-        <p class="film_element">{{ movie.original_language }}</p>
+        <p class="film_element" v-if="movie.original_language === 'it'">&#127470;&#127481;</p>
+        <p class="film_element" v-else-if="movie.original_language === 'en'">&#127988;&#917607;&#917602;&#917605;&#917614;&#917607;&#917631;</p>
+        <p class="film_element" v-else>&#127987;&#65039;&#8205;&#127752;</p>
 
         <!-- Voto -->
         <p class="film_element">{{ movie.vote_average }}</p>
