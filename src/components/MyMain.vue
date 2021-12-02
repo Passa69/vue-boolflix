@@ -1,6 +1,9 @@
 <template>
   <main>
     <div v-for="(movie, i) in films" :key="i">
+        <!-- immagine -->
+        <img :src="'http://image.tmdb.org/t/p/w500/' + 'movie.poster_path'" alt="">
+
         <!-- Titolo -->
         <h4 class="film_element">{{ movie.title }}</h4>
         <h4 v-if="movie.name" class="film_element">{{ movie.name }}</h4>
