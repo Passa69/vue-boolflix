@@ -3,7 +3,7 @@
     <MyHeader @getInput="setInput" />
 
     <main>
-      <MyMain :films="films" />
+      <MyMain :films="filmsseries" />
     </main>
   </div>
 </template>
@@ -21,18 +21,19 @@ export default {
   },
   data() {
     return {
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=",
-      films: [],
+      apiUrlfilm: "https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=",
+      apiUrlseries: "https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=",
+      filmsseries: [],
       search: ""
     }
   },
   methods: {
     getFilms() {
       axios
-      .get(this.apiUrl + this.search)
+      .get(this.apiUrlfilm + this.apiUrlseries + this.search)
       .then((film) => {
-        this.films = film.data.results;
-        console.log(this.films);
+        this.filmsseries = film.data.results;
+        console.log(this.filmsseries);
       })
     },
     setInput(input) {
