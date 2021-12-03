@@ -1,25 +1,30 @@
 <template>
   <main>
-    <div v-for="(movie, i) in films" :key="i">
+    <div v-for="(movie, i) in films" class="film" :key="i">
         <!-- immagine -->
         <img v-if="movie.poster_path === null" class="netflix_path" :src="'http://www.losbagliato.it/wp-content/uploads/2021/07/copertina-netflix-23-giugno-960x960.png'" alt="">
         <img v-else :src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="">
 
-        <!-- Titolo -->
-        <h4 class="film_element">{{ movie.title }}</h4>
-        <h4 v-if="movie.name" class="film_element">{{ movie.name }}</h4>
+        <div class="film_description">
+          <!-- Titolo -->
+          <h4 class="film_element"><strong>Titolo:</strong> {{ movie.title }}</h4>
+          <h4 v-if="movie.name" class="film_element"><strong>Titolo:</strong> {{ movie.name }}</h4>
 
-        <!-- Titolo Originale -->
-        <h5 class="film_element">{{ movie.original_title }}</h5>
-        <h5 v-if="movie.original_name" class="film_element">{{ movie.original_name }}</h5>
+          <!-- Titolo Originale -->
+          <h5 class="film_element"><strong>Titolo Originale:</strong> {{ movie.original_title }}</h5>
+          <h5 v-if="movie.original_name" class="film_element"><strong>Titolo Originale:</strong> {{ movie.original_name }}</h5>
 
-        <!-- Lingua -->
-        <p class="film_element" v-if="movie.original_language === 'it'">&#127470;&#127481;</p>
-        <p class="film_element" v-else-if="movie.original_language === 'en'">&#127988;&#917607;&#917602;&#917605;&#917614;&#917607;&#917631;</p>
-        <p class="film_element" v-else>&#127987;&#65039;&#8205;&#127752;</p>
+          <!-- Lingua -->
+          <p class="film_element" v-if="movie.original_language === 'it'"><strong>Lingua:</strong> &#127470;&#127481;</p>
+          <p class="film_element" v-else-if="movie.original_language === 'en'"><strong>Lingua:</strong> &#127988;&#917607;&#917602;&#917605;&#917614;&#917607;&#917631;</p>
+          <p class="film_element" v-else><strong>Lingua:</strong> &#127987;&#65039;&#8205;&#127752;</p>
 
-        <!-- Voto -->
-        <p class="film_element">{{ movie.vote_average }}</p>
+          <!-- Voto -->
+          <p class="film_element"><strong>Voto:</strong> {{ movie.vote_average }}</p>
+
+          <!-- Trama -->
+          <p class="film_plot"><strong>Trama:</strong> {{ movie.overview }}</p>
+        </div>        
     </div>
   </main>
 </template>
@@ -37,26 +42,48 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 main {
-    height: 100%;
-    margin: 0 auto;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
+  height: 100%;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-div{
-    // height: 400px;
-    // width: 300px;
-    background-color: #b1dbec;
-    margin: 50px;
+.film {
+  margin: 50px;
+  position: relative;
 }
 
-.film_element {
-    margin-bottom: 10px;
+.film_description {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 50px 20px;
+  color: white;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.film_description :hover {
+  display: block;
+  z-index: 999;
 }
 
 .netflix_path {
   height: 750px;
   width: 500px;
+}
+
+.film_element {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.film_plot {
+  width: 400px;
+  text-align: left;
 }
 </style>
