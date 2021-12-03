@@ -67,7 +67,7 @@ main {
   opacity: 0.7;
 }
 
-.film_description :hover {
+.film:hover > .film_description {
   display: block;
   z-index: 999;
 }
