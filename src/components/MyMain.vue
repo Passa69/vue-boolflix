@@ -20,7 +20,9 @@
           <p class="film_element" v-else><strong>Lingua:</strong> &#127987;&#65039;&#8205;&#127752;</p>
 
           <!-- Voto -->
-          <p class="film_element"><strong>Voto:</strong> <font-awesome-icon icon="star" class="checked" /> <font-awesome-icon icon="star" /> {{ movie.vote_average/2 }}</p>
+          <p class="film_element"><strong>Voto:</strong>
+
+          <font-awesome-icon icon="star" v-for="index in 5" :key="index" :class="star(index, movie.vote_average)" class="vote" /></p>
 
           <!-- Trama -->
           <p class="film_plot"><strong>Trama:</strong> {{ movie.overview }}</p>
@@ -34,6 +36,14 @@ export default {
   name: 'MyMain',
   props: {
       films: Array
+  },
+  methods: {
+    star(index, value) {
+      let vote = Math.round(value / 2);
+      if (index <= vote) {
+        return "checked";
+      }
+    }
   }
 
 }
@@ -85,6 +95,10 @@ main {
 .film_plot {
   width: 400px;
   text-align: left;
+}
+
+.vote {
+  margin-left: 5px;
 }
 
 .checked {
