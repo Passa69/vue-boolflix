@@ -64,7 +64,7 @@ main {
   padding: 50px 20px;
   color: white;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .film_description :hover {
@@ -78,8 +78,8 @@ main {
 }
 
 .film_element {
-    margin-bottom: 10px;
-    text-align: left;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 .film_plot {

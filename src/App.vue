@@ -46,6 +46,7 @@ export default {
     },
     setInput(input) {
       this.search = input;
+      this.filmsseries.length = 0;
       console.log(input);
       this.getFilms();
       this.getSeries();
@@ -72,5 +73,6 @@ export default {
 
 main {
   background-color: #434343;
+  min-height: 1000px;
 }
 </style>
