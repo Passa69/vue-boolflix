@@ -20,7 +20,7 @@
           <p class="film_element" v-else><strong>Lingua:</strong> &#127987;&#65039;&#8205;&#127752;</p>
 
           <!-- Voto -->
-          <p class="film_element"><strong>Voto:</strong> {{ movie.vote_average }}</p>
+          <p class="film_element"><strong>Voto:</strong> <font-awesome-icon icon="star" class="checked" /> <font-awesome-icon icon="star" /> {{ movie.vote_average/2 }}</p>
 
           <!-- Trama -->
           <p class="film_plot"><strong>Trama:</strong> {{ movie.overview }}</p>
@@ -85,5 +85,9 @@ main {
 .film_plot {
   width: 400px;
   text-align: left;
+}
+
+.checked {
+  color: yellow;
 }
 </style>
