@@ -56,8 +56,6 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '~@fortawesome/fontawesome-free/css/all.min.css';
-
 * {
   margin: 0;
   padding: 0;
