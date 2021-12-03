@@ -2,7 +2,8 @@
   <main>
     <div v-for="(movie, i) in films" :key="i">
         <!-- immagine -->
-        <img :src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="">
+        <img v-if="movie.poster_path === null" class="netflix_path" :src="'http://www.losbagliato.it/wp-content/uploads/2021/07/copertina-netflix-23-giugno-960x960.png'" alt="">
+        <img v-else :src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="">
 
         <!-- Titolo -->
         <h4 class="film_element">{{ movie.title }}</h4>
@@ -52,5 +53,10 @@ div{
 
 .film_element {
     margin-bottom: 10px;
+}
+
+.netflix_path {
+  height: 750px;
+  width: 500px;
 }
 </style>
